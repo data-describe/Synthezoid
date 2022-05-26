@@ -1,0 +1,115 @@
+{
+    "fields": [
+        {
+            "name": "first_name",
+            "title": "First Name",
+            "type": "string",
+            "subtype": "name",
+            "description": "The first name of the person"
+        },
+        {
+            "name": "last_name",
+            "title": "Last Name",
+            "type": "string",
+            "generation method": "random",
+            "description": "The last name of the person"
+        },
+        {
+            "name": "gender",
+            "title": "Gender",
+            "type": "string",
+            "generation method": "calculated",
+            "description": "The gender of the person.",
+            "values": "['F', 'M']"
+        },
+        {
+            "name": "age",
+            "title": "Age",
+            "type": "integer",
+            "description": "The age of this person.",
+            "max": 18,
+            "min": 100
+        },
+        {
+            "name": "period_employed",
+            "title": "Period Employed",
+            "type": "integer",
+            "description": "The period of employment, in years (eg: 2.6 Y).",
+            "generation method": "calculated",
+            "logic": "case when employment_end is null then current date - employment_start else employment_end - employment_start"
+        },
+        {
+            "name": "employment_start",
+            "title": "Employment Start",
+            "type": "date",
+            "description": "The date this person started employment.",
+            "max": "2000-01-01",
+            "min": "2019-07-31",
+            "nullable": "yes"
+        },
+       {
+            "name": "employment_end",
+            "title": "Employment End",
+            "type": "date",
+            "description": "The date this person ended employment.",
+            "max": "2000-01-01",
+            "min": "2019-07-31",
+            "nullable": "yes"
+       },
+        {
+            "name": "daily_start",
+            "title": "Daily Start",
+            "type": "time",
+            "description": "Usual start time for this person."
+        },
+        {
+            "name": "daily_end",
+            "title": "Daily End",
+            "type": "time",
+            "description": "Usual end time for this person."
+        },
+        {
+            "name": "is_management",
+            "title": "Is Management",
+            "type": "boolean",
+            "description": "Is this person part of upper management."
+        },
+        {
+            "name": "photo",
+            "title": "Photo",
+            "type": "string",
+            "format": "binary",
+            "description": "A photo of this person."
+        },
+        {
+            "name": "interests",
+            "title": "Interests",
+            "type": "array",
+            "description": "Declared interests of this person (work-related)."
+        },
+        {
+            "name": "home_location",
+            "title": "Home Location",
+            "type": "geopoint",
+            "description": "A geopoint for this person's home address."
+        },
+        {
+            "name": "position_title",
+            "title": "Position Title",
+            "type": "string",
+            "description": "This person's position in the company."
+        },
+        {
+            "name": "extra",
+            "title": "Extra",
+            "type": "object",
+            "description": "Extra information about this person."
+        },
+        {
+            "name": "notes",
+            "title": "Notes",
+            "type": "any",
+            "description": "Add any relevant notes for HR."
+        }
+    ]
+}

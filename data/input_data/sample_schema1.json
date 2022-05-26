@@ -1,0 +1,78 @@
+{
+    "fields": [
+        {
+            "name": "first_name",
+            "title": "First Name",
+            "type": "string",
+            "dependency": "independent",
+            "subtype": "name",
+            "connected category": "name",
+            "parameters":
+                {
+                  "name_type": "first"
+                },
+            "description": "The first name of the person"
+        },
+        {
+            "name": "last_name",
+            "title": "Last Name",
+            "type": "string",
+            "dependency": "independent",
+            "subtype": "name",
+            "connected category": "name",
+            "parameters":
+                {
+                  "name_type": "last"
+                },
+            "generation method": "random",
+            "description": "The last name of the person"
+        },
+        {
+            "name": "age",
+            "title": "Age",
+            "type": "integer",
+            "dependency": "independent",
+            "description": "The age of this person.",
+            "parameters":
+                {
+                  "max": 18,
+                  "min": 100
+                }
+        },
+        {
+            "name": "employment_start",
+            "title": "Employment Start",
+            "type": "date",
+            "dependency": "independent",
+            "description": "The date this person started employment.",
+            "parameters":
+                {
+                  "max": "2000-01-01",
+                  "min": "2019-07-31",
+                  "nullable": "false"
+                }
+        },
+       {
+            "name": "employment_end",
+            "title": "Employment End",
+            "type": "date",
+           "dependency": "dependent",
+            "description": "The date this person ended employment.",
+            "parameters":
+                {
+                  "max": "2000-01-01",
+                  "min":  "2019-07-31",
+                  "nullable": "true"
+                }
+       },
+        {
+            "name": "is_management",
+            "title": "Is Management",
+            "type": "integer",
+            "dependency": "independent",
+            "max": 1,
+            "min": 0,
+            "description": "Is this person part of upper management."
+        }
+    ]
+}

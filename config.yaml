@@ -1,0 +1,17 @@
+schema: ./data/input_data/sample_schema_independent.json
+output:
+    type: csv
+    location: ./data/output_data/test_data1.csv
+    delimiter: ','
+    length: 5000
+random seed: 3
+data type functions:
+    string:
+        name: name_generator
+        categorical: categorical_generator
+        location: location_generator
+        contact: contact_generator
+    integer: metric_generator
+    date: datetime_generator
+    datetime: datetime_generator
+    boolean: categorical_generator
